@@ -1,677 +1,242 @@
-<!doctype html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Picker × Papa John's + El Corral</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html, body {
-      font-family: 'Inter', sans-serif;
-      background: #07101f;
-      color: #e2e8f0;
-      height: 100%;
-      overflow: hidden;
-    }
+PICKER
+×
+GRUPO NUTRESA
+Grupo Nutresa convierte su flota en ventaja competitiva.
 
-    :root {
-      --blue: #38bdf8;
-      --blue-dim: rgba(56,189,248,.11);
-      --blue-border: rgba(56,189,248,.26);
-      --red: #f87171;
-      --red-dim: rgba(248,113,113,.10);
-      --red-border: rgba(248,113,113,.26);
-      --amber: #f59e0b;
-      --amber-dim: rgba(245,158,11,.10);
-      --amber-border: rgba(245,158,11,.26);
-      --green: #4ade80;
-      --green-dim: rgba(74,222,128,.10);
-      --green-border: rgba(74,222,128,.26);
-      --muted: #64748b;
-      --border: #1e3557;
-      --card: #0c1628;
-    }
+Papa John's · El Corral · 101 locales · 34,000 pedidos/mes — el business case para orquestar el canal D2C con Picker.
+PARA
+Patricia Torres · Equipo Nutresa
+FECHA
+22 de mayo, 2026
+PRESENTADO POR
+Ricardo Astorga · Picker Express
+DATOS CONFIRMADOS
+Lo que sabemos de la operación de Grupo Nutresa.
+LOCALES ACTIVOS
+101
+50 Papa John's · 51 El Corral
+PEDIDOS D2C / MES
+34,000
+Canal propio confirmado
+TICKET PROMEDIO
+$70,000
+COP · solo Papa John's
+GMV MENSUAL
+$2,380M
+COP en ventas D2C
+EQUIPO DE REPARTO
+170
+repartidores
 
-    .slide { display:none; position:absolute; inset:0; flex-direction:column; justify-content:center; align-items:center; padding:32px 28px 80px; }
-    .slide.active { display:flex; }
-    .inner { width:100%; max-width:960px; }
+35
+call center
+$3,500,000 COP/persona/mes
+COSTO OPERATIVO HOY
+$21,103
+COP promedio por envío
+Margen neto: 39.9%
+DIAGNÓSTICO
+Tres dolores que frenan el canal D2C de Nutresa.
+💸
+Costo fijo sin retorno
+170 repartidores a nómina hacen solo 8 envíos/día en promedio. La flota está subutilizada y el costo por envío es $21,103 COP — sin importar si el volumen sube o baja.
+Costo nómina fijo: $717.5M COP/mes
+⏱️
+Tiempos que alejan clientes
+El tiempo promesa es 60 min en semana y 90 min en fin de semana. El 70% de los clientes que reciben su pedido tarde no vuelven a pedir.
+Recurrencia perdida → ventas no realizadas
+🔒
+Expansión bloqueada
+Abrir nuevos locales requiere invertir en más repartidores fijos primero. Sin la tecnología para una flota compartida entre marcas, Nutresa no puede escalar eficientemente.
+Meta interna: flota compartida "domiciliarios Nutresa"
+LA SOLUCIÓN
+Picker: el orquestador que Nutresa necesita para su canal propio.
+No reemplaza a los repartidores de Nutresa. Los maximiza: el pedido correcto al rider correcto al costo correcto.
+📱
+Pedido entra
+App D2C de Nutresa
+→
+⚡
+Picker orquesta
+¿Repartidor propio disponible y cerca? ¿O más eficiente 3PL?
+→
+→
+🛵
+Flota propia Nutresa
+Prioridad <3km
+🚗
+Rappi · Army · Cabify
+Overflow >3km
+→
+✅
+Entregado
+Tracking bajo marca Nutresa
+1
+Dashboard único para 101 locales
+Todas las marcas, en tiempo real.
+2
+Tarifas y credenciales de Nutresa
+Picker opera con los contratos que ya tiene Nutresa con 3PL.
+3
+Tecnología para flota compartida
+Un repartidor puede tomar pedidos de PJ, El Corral y las 5 marcas restantes.
+1
+PILAR UNO
+Ahorro Operativo
+SITUACIÓN HOY
+Tienes 170 repartidores a nómina haciendo 8 envíos/día en promedio. Tu flota saca pedidos largos (>4km) cuando podría concentrarse en los cortos.
+$21,103
+COP / envío hoy
+39.9%
+margen neto
+CON PICKER
+Regla de distancia: flota propia toma pedidos <3km, 3PL (Rappi, Army) los de >3km. Cada repartidor sube de 8 a 12 envíos/día. Puedes operar con ~110 repartidores en lugar de 170.
+COMPARATIVO P&L MENSUAL
+ESCENARIO
+COSTO / ENVÍO
+MARGEN
+NETO / MES
+Hoy
+$21,103
+39.9%
+$948.5M
+50% Picker
+$18,018
+44.3%
+$1,053.4M
+75% Picker
+$16,225
+46.8%
+$1,114.3M
+AHORRO MENSUAL
+50% CON PICKER
++$104.9M
+COP/mes · $1,258.8M/año
+ROI 2.2×
+75% CON PICKER
++$165.8M
+COP/mes · $1,989.6M/año
+ROI 3.5×
+2
+PILAR DOS
+Recurrencia del Cliente
+EL PROBLEMA
+El 70% de los clientes que reciben su pedido tarde no vuelven a pedir. El tiempo promesa de Nutresa hoy es 60 minutos entre semana y 90 minutos los fines de semana.
+Tiempo promesa vs realidad
+60–90 min
+Promesa Nutresa hoy
 
-    .hero { font-size:clamp(1.9rem,4.2vw,3.2rem); font-weight:900; line-height:1.08; letter-spacing:-.03em; }
-    .h2   { font-size:clamp(1.3rem,2.8vw,2.1rem); font-weight:800; line-height:1.15; }
-    .sub  { color:var(--muted); font-weight:400; line-height:1.65; font-size:clamp(.88rem,1.5vw,1rem); }
-    .label { font-size:.67rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--muted); }
-    .label-blue  { color:var(--blue); }
-    .label-green { color:var(--green); }
-    .label-amber { color:var(--amber); }
-    .label-red   { color:var(--red); }
-    .num-xl { font-size:clamp(2rem,4.5vw,3.5rem); font-weight:900; line-height:1; letter-spacing:-.02em; }
-    .num-lg { font-size:clamp(1.5rem,2.8vw,2.3rem); font-weight:800; line-height:1; }
-    .num-md { font-size:clamp(1.1rem,2vw,1.6rem); font-weight:800; line-height:1; }
-    .fw6 { font-weight:600; } .fw7 { font-weight:700; }
-    .fs12 { font-size:.75rem; } .fs13 { font-size:.82rem; }
-    .lh { line-height:1.6; }
-    .blue { color:var(--blue); } .green { color:var(--green); }
-    .red  { color:var(--red); }  .amber { color:var(--amber); }
-    .muted { color:var(--muted); }
-    .tc { text-align:center; } .tr { text-align:right; }
+43 min
+Promedio Picker Colombia
+CON PICKER
+Picker optimiza la asignación de rider para cumplir el tiempo de preparación exacto del local. Menos esperas. Menor tiempo total de entrega. Más clientes que regresan.
+OPORTUNIDAD FINANCIERA DE LA RECURRENCIA
+Si recurrencia sube +25%
+hipótesis conservadora
++8,500
+pedidos adicionales/mes
++$595M
+COP revenue adicional/mes
 
-    .mt4{margin-top:4px}.mt6{margin-top:6px}.mt8{margin-top:8px}.mt12{margin-top:12px}.mt16{margin-top:16px}
-    .mb4{margin-bottom:4px}.mb8{margin-bottom:8px}.mb12{margin-bottom:12px}.mb16{margin-bottom:16px}
-    .mb20{margin-bottom:20px}.mb24{margin-bottom:24px}.mb28{margin-bottom:28px}.mb32{margin-bottom:32px}
+Basado en: 34,000 pedidos × 25% recurrencia × $70,000 COP ticket promedio.
+La lógica del negocio
+Cada cliente que regresa cuesta $0 adicional en adquisición. Mejorar el tiempo de entrega es la inversión más rentable que puede hacer Nutresa en su canal D2C.
+3
+PILAR TRES
+Escalabilidad y Expansión
+EL BLOQUEO HOY
+Para activar un nuevo local, Nutresa necesita invertir primero en repartidores fijos. Con estructura de costos rígida, abrir es arriesgado. Nutresa tiene locales sin activar en D2C por este motivo.
+CON PICKER
+Prendes el local y Picker lo cubre con 3PL desde el día 1. Sin inversión previa en flota. Si funciona, agregas repartidores propios. Si no, apagas sin penalización.
+Meta estratégica Nutresa — "Domiciliarios Nutresa"
+Grupo Nutresa quiere una flota compartida que trabaje para todas sus marcas: Papa John's, El Corral, Bob, Beer Station y las demás. Hoy no tienen la tecnología para hacerlo. Picker es esa tecnología.
+OPORTUNIDAD DE EXPANSIÓN
+🏪
++10 locales activables
+Sin inversión en flota previa · arrancas con 3PL
++5,000
+pedidos potenciales
 
-    .flex{display:flex}.col{flex-direction:column}.ai-c{align-items:center}
-    .jc-c{justify-content:center}.jc-sb{justify-content:space-between}.wrap{flex-wrap:wrap}
-    .gap6{gap:6px}.gap8{gap:8px}.gap10{gap:10px}.gap12{gap:12px}.gap16{gap:16px}.gap24{gap:24px}
-    .g2 { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
-    .g3 { display:grid; grid-template-columns:1fr 1fr 1fr; gap:14px; }
-    .g4 { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; }
-    .w100 { width:100%; }
+🔗
+7 marcas, 1 flota
+Un repartidor puede tomar pedidos de cualquier marca Nutresa
+Nutresa
+flota compartida
 
-    .card  { background:var(--card); border:1px solid var(--border); border-radius:14px; padding:18px; }
-    .cb    { background:var(--blue-dim); border:1px solid var(--blue-border); border-radius:14px; padding:18px; }
-    .cg    { background:var(--green-dim); border:1px solid var(--green-border); border-radius:14px; padding:18px; }
-    .cr    { background:var(--red-dim); border:1px solid var(--red-border); border-radius:14px; padding:18px; }
-    .ca    { background:var(--amber-dim); border:1px solid var(--amber-border); border-radius:14px; padding:18px; }
-    .cdark { background:#050c1b; border:1px solid var(--border); border-radius:14px; padding:18px; }
+📈
+Utilización máxima
+Los repartidores nunca están ociosos — siempre hay pedido de alguna marca
+-30%
+costo/envío estimado
+RESUMEN POR PILAR
+Tres palancas. Un solo fee de $1,400 COP/envío.
+Fee Picker: $47.6M COP/mes (1,400 × 34,000 envíos) + tarifas de los proveedores 3PL (Rappi, Army, Cabify — a las tarifas que ya tiene Nutresa negociadas).
+1
+Ahorro Operativo
++$165.8M
+COP / mes
 
-    .badge { display:inline-flex; align-items:center; gap:5px; border-radius:999px; padding:4px 13px; font-size:.67rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; }
-    .bb { background:var(--blue-dim);  border:1px solid var(--blue-border);  color:var(--blue); }
-    .bg { background:var(--green-dim); border:1px solid var(--green-border); color:var(--green); }
-    .br { background:var(--red-dim);   border:1px solid var(--red-border);   color:var(--red); }
-    .bm { background:#111e36;          border:1px solid var(--border);       color:var(--muted); }
-    .ba { background:var(--amber-dim); border:1px solid var(--amber-border); color:var(--amber); }
+Margen: 39.9% → 46.8%
+Costo/envío: $21K → $16K
+ROI: 3.5×
+2
+Recurrencia
++$595M
+COP revenue potencial/mes
 
-    .rule  { width:34px; height:2px; border-radius:2px; background:var(--blue); }
-    .ruler { width:34px; height:2px; border-radius:2px; background:var(--red); }
-    .auto  { margin:0 auto; }
++8,500 pedidos adicionales
+Tiempo: 60–90 min → ~43 min
+Sin costo extra de adquisición
+3
+Expansión · Flota Nutresa
++5,000
+pedidos potenciales/mes
 
-    .track { background:var(--border); border-radius:4px; height:5px; overflow:hidden; }
-    .fill  { height:100%; border-radius:4px; transition:width .9s ease; }
++10 locales activables
+7 marcas en 1 sola flota
+Sin inversión en flota previa
+Escenario optimizado (Pilar 1 solo, 75% Picker): +$1,989.6M COP / año · ROI 3.5× sobre el fee de Picker
+PRÓXIMOS PASOS
+Piloto esta semana. Resultados en 2–3 semanas.
+2 locales (1 Papa John's + 1 El Corral) para validar el modelo con datos reales de Nutresa.
+1
+Setup del piloto — esta semana
+Picker conecta 2 locales. Integración con el sistema de pedidos de Nutresa.
+2
+Entrenamiento de equipo — 1 día
+Repartidores y coordinadores de los 2 locales piloto.
+3
+Piloto en vivo — 2–3 semanas
+Operación real. Picker mide costo/envío, SLA, y eficiencia de flota.
+4
+Revisión de resultados
+Sesión con equipo Nutresa. Validar modelo vs. realidad. Despliegue a 101 locales.
+LO QUE PICKER NECESITA DE NUTRESA
+	•	→ API / webhook del sistema de pedidos → Credenciales 3PL de Nutresa (Rappi / Army) → 2 locales seleccionados para el piloto → Punto de contacto técnico en IT
+PROPUESTA ECONÓMICA & PILOTO
+Fee por envío
+$1,400 COP
+Fee mensual por local
+$200,000 COP
+✓ Eliminado por Picker
+Duración
+2–3 semanas
+Compromiso
+Solo los 2 locales piloto
+PICKER
+×
+GRUPO NUTRESA
+La flota de Nutresa, más eficiente. Más rentable.
 
-    .glowB { position:absolute; inset:0; background:radial-gradient(ellipse 55% 40% at 50% 0%, rgba(56,189,248,.07) 0%, transparent 70%); pointer-events:none; }
-    .glowR { position:absolute; inset:0; background:radial-gradient(ellipse 55% 40% at 50% 0%, rgba(248,113,113,.07) 0%, transparent 70%); pointer-events:none; }
-    .glowA { position:absolute; inset:0; background:radial-gradient(ellipse 55% 40% at 80% 50%, rgba(245,158,11,.06) 0%, transparent 70%); pointer-events:none; }
+En el escenario optimizado, Grupo Nutresa ahorra $165.8M COP adicionales cada mes — manteniendo el control total de su operación y su flota.
+$1,989M
+COP / AÑO (75% PICKER)
+3.5×
+ROI SOBRE FEE PICKER
+2 sem.
+PARA VER RESULTADOS
+Ricardo Astorga · Director Comercial · Picker Express
+ricardoast@pickerexpress.com
+1 / 10
 
-    .flow-wrap { display:flex; align-items:flex-start; justify-content:center; gap:0; flex-wrap:wrap; }
-    .flow-step { display:flex; flex-direction:column; align-items:center; gap:5px; padding:0 10px; flex:1; min-width:80px; text-align:center; }
-    .flow-icon { width:42px; height:42px; border-radius:11px; display:flex; align-items:center; justify-content:center; font-size:1.2rem; flex-shrink:0; }
-    .flow-arrow { align-self:center; padding-bottom:24px; color:var(--muted); font-size:1rem; flex-shrink:0; }
 
-    .itbl { width:100%; border-collapse:collapse; font-size:.78rem; }
-    .itbl tr { border-bottom:1px solid var(--border); }
-    .itbl tr:last-child { border-bottom:none; }
-    .itbl td { padding:6px 10px; }
-    .itbl td:first-child { color:var(--muted); }
-    .itbl td:last-child { font-weight:700; text-align:right; color:#e2e8f0; }
-    .itbl .hl td { background:rgba(248,113,113,.07); }
-    .itbl .hl td:first-child { color:var(--red); font-weight:700; }
-    .itbl .hl td:last-child { color:var(--red); font-size:.92rem; }
-
-    @keyframes up { from{opacity:0;transform:translateY(18px)} to{opacity:1;transform:translateY(0)} }
-    .f { opacity:0; animation:up .5s ease forwards; }
-    .d0{animation-delay:.05s}.d1{animation-delay:.15s}.d2{animation-delay:.25s}
-    .d3{animation-delay:.35s}.d4{animation-delay:.45s}.d5{animation-delay:.55s}
-    .d6{animation-delay:.65s}.d7{animation-delay:.75s}
-
-    #nav { position:fixed; bottom:20px; left:50%; transform:translateX(-50%); display:flex; align-items:center; gap:12px; z-index:100; background:rgba(7,16,31,.92); backdrop-filter:blur(14px); border:1px solid var(--border); border-radius:999px; padding:7px 15px; }
-    .nb { width:32px; height:32px; border-radius:50%; background:transparent; border:1px solid var(--border); color:#e2e8f0; cursor:pointer; display:flex; align-items:center; justify-content:center; transition:background .15s; }
-    .nb:hover:not(:disabled) { background:var(--border); }
-    .nb:disabled { opacity:.3; cursor:not-allowed; }
-    .dot { width:5px; height:5px; border-radius:50%; background:var(--border); cursor:pointer; transition:all .25s; }
-    .dot.on { background:var(--blue); width:17px; border-radius:3px; }
-
-    #wm  { position:fixed; top:17px; left:20px; font-size:.82rem; font-weight:800; letter-spacing:-.01em; }
-    #ctr { position:fixed; top:17px; right:20px; font-size:.7rem; color:var(--muted); font-weight:500; }
-    .sep { border:none; border-top:1px solid var(--border); margin:14px 0; }
-
-    @media(max-width:680px){
-      .g2,.g3,.g4{grid-template-columns:1fr 1fr}
-      .hide-sm{display:none!important}
-    }
-  </style>
-</head>
-<body>
-
-<div id="wm"><span style="color:#e2e8f0">picker</span><span style="color:var(--blue)">.</span></div>
-<div id="ctr"></div>
-
-<!-- ═══ S1 · COVER ═══ -->
-<div class="slide active" id="s1">
-  <div class="glowB"></div>
-  <div class="inner tc">
-    <div class="f d0 mb12"><span class="badge bm">Propuesta Comercial · Colombia · 2026</span></div>
-    <div class="rule auto f d1" style="margin:12px auto 20px;"></div>
-    <div class="flex ai-c jc-c gap12 wrap mb20 f d2">
-      <span style="font-size:clamp(1.4rem,3.8vw,2.5rem);font-weight:900;letter-spacing:-.02em;color:var(--red);">Papa John's</span>
-      <span class="muted" style="font-size:1.3rem;">×</span>
-      <span style="font-size:clamp(1.4rem,3.8vw,2.5rem);font-weight:900;color:var(--amber);letter-spacing:-.02em;">El Corral</span>
-    </div>
-    <h1 class="hero f d3 mb16">
-      Canal propio eficiente,<br>
-      <span class="blue">recurrente y escalable.</span>
-    </h1>
-    <p class="sub f d4 mb32" style="max-width:520px;margin-left:auto;margin-right:auto;">
-      Cómo transformar la operación de entrega de Papa John's y El Corral en una ventaja competitiva sostenible.
-    </p>
-    <div class="flex jc-c gap24 wrap f d5">
-      <div class="tc">
-        <div class="num-lg red">51</div>
-        <div class="label mt4">locales activos<br>Papa John's</div>
-      </div>
-      <div style="width:1px;background:var(--border);align-self:stretch;" class="hide-sm"></div>
-      <div class="tc">
-        <div class="num-lg amber">50</div>
-        <div class="label mt4">locales activos<br>El Corral</div>
-      </div>
-      <div style="width:1px;background:var(--border);align-self:stretch;" class="hide-sm"></div>
-      <div class="tc">
-        <div class="num-lg blue">34,000</div>
-        <div class="label mt4">envíos/mes<br>canal propio</div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- ═══ S2 · DIAGNÓSTICO ═══ -->
-<div class="slide" id="s2">
-  <div class="glowR"></div>
-  <div class="inner">
-    <div class="tc mb20">
-      <div class="f d0 mb8"><span class="badge bm">El Diagnóstico</span></div>
-      <h2 class="h2 f d1">Señales de alerta<br><span class="red">en la operación actual.</span></h2>
-    </div>
-    <div class="g4 f d2 mb12">
-      <div class="card tc">
-        <div style="font-size:1.1rem;margin-bottom:6px;">🏍️</div>
-        <div class="num-md red">170</div>
-        <div class="label mt4">repartidores<br>propios</div>
-        <div class="muted fs12 mt6">costo 100% fijo</div>
-      </div>
-      <div class="card tc">
-        <div style="font-size:1.1rem;margin-bottom:6px;">📞</div>
-        <div class="num-md amber">35</div>
-        <div class="label mt4">contact<br>center</div>
-        <div class="muted fs12 mt6">coordinación manual</div>
-      </div>
-      <div class="card tc">
-        <div style="font-size:1.1rem;margin-bottom:6px;">⏱️</div>
-        <div class="num-md red" style="font-size:1rem;">60–90 min</div>
-        <div class="label mt4">tiempo de<br>entrega</div>
-        <div class="muted fs12 mt6">semana / fin de semana</div>
-      </div>
-      <div class="card tc">
-        <div style="font-size:1.1rem;margin-bottom:6px;">🏍️</div>
-        <div class="num-md red" style="font-size:1rem;">~8 env/día</div>
-        <div class="label mt4">por<br>repartidor</div>
-        <div class="muted fs12 mt6">industria: 12–15</div>
-      </div>
-    </div>
-
-    <div class="cr f d3">
-      <div class="flex gap10 ai-c mb8"><span>⚠️</span><span class="fw7">El problema de fondo</span></div>
-      <div class="flex col gap6 muted fs13 lh">
-        <span>→ <strong style="color:#e2e8f0;">100% costo fijo.</strong> Los 170 repartidores cobran igual en horas pico y en horas vacías.</span>
-        <span>→ <strong style="color:#e2e8f0;">Sin visibilidad unificada.</strong> No hay datos en tiempo real del costo por envío ni del estado de cada pedido.</span>
-        <span>→ <strong style="color:#e2e8f0;">Sin redundancia.</strong> Cuando la flota propia colapsa, no hay alternativa organizada disponible.</span>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- ═══ S3 · INPUTS ═══ -->
-<div class="slide" id="s3">
-  <div class="glowB"></div>
-  <div class="inner">
-    <div class="tc mb20">
-      <div class="f d0 mb8"><span class="badge bb">Los Inputs · Lo que nos dijeron</span></div>
-      <h2 class="h2 f d1">El modelo financiero parte<br><span class="blue">de sus propios datos.</span></h2>
-      <p class="sub f d2 mt8" style="font-size:.84rem;">Toda la proyección de los siguientes slides se construye con información provista por el cliente.</p>
-    </div>
-    <div class="g2 f d2 mb12" style="align-items:start;">
-      <div class="card">
-        <div class="label mb12">Datos operativos · provistos por el cliente</div>
-        <table class="itbl">
-          <tr><td>Ticket promedio</td><td>COP $70,000</td></tr>
-          <tr><td>Envíos D2C / mes</td><td>34,000</td></tr>
-          <tr><td>Locales activos con delivery</td><td>101</td></tr>
-          <tr><td>Repartidores propios (FT)</td><td>170 (ambas marcas)</td></tr>
-          <tr class="hl"><td>⚡ Envíos / repartidor / día</td><td>~8 &nbsp;←&nbsp;BAJO</td></tr>
-          <tr><td>Costo repartidor FT / mes</td><td>COP $3,500,000</td></tr>
-          <tr><td>Agentes contact center</td><td>35</td></tr>
-          <tr><td>Costo agente CC / mes</td><td>COP $3,500,000</td></tr>
-        </table>
-      </div>
-      <div class="flex col gap10">
-        <div class="cr">
-          <div class="label label-red mb8">El número que más importa</div>
-          <div class="tc" style="margin:10px 0;">
-            <div style="font-size:3.2rem;font-weight:900;line-height:1;color:var(--red);">8</div>
-            <div class="label label-red mt4">envíos / repartidor / día</div>
-          </div>
-          <div class="muted fs13 lh flex col gap6 mt10">
-            <span>→ Benchmark industria: <strong style="color:#e2e8f0;">12–15 envíos/rider/día.</strong></span>
-            <span>→ Hoy están al <strong style="color:var(--red);">~55% de la capacidad real</strong> de su flota.</span>
-            <span>→ Pagan 170 riders todo el mes — pero sólo aprovechan la mitad de su potencial.</span>
-          </div>
-        </div>
-        <div class="cb">
-          <div class="label label-blue mb8">¿Por qué ocurre esto?</div>
-          <div class="muted fs13 lh flex col gap6">
-            <span>→ <strong style="color:#e2e8f0;">Sin orquestación:</strong> asignación manual genera demoras y subutilización.</span>
-            <span>→ <strong style="color:#e2e8f0;">Sin visibilidad en tiempo real:</strong> el dispatcher no sabe el estado de cada pedido.</span>
-            <span>→ <strong style="color:#e2e8f0;">Sin métricas por local:</strong> no hay forma de medir ni mejorar.</span>
-          </div>
-        </div>
-        <div class="card tc">
-          <div class="label mb4">Costo fijo mensual actual</div>
-          <div class="num-md red">COP $718M</div>
-          <div class="muted fs12 mt4">170 riders × $3.5M + 35 CC × $3.5M</div>
-        </div>
-      </div>
-    </div>
-    <div class="cb f d3 flex ai-c gap12 wrap">
-      <span style="font-size:1.1rem;">📊</span>
-      <span class="muted fs13 lh" style="flex:1;">Los siguientes slides muestran cómo estos inputs cambian con Picker — sin reemplazar al equipo, sino <strong style="color:#e2e8f0;">redistribuyendo el trabajo de forma inteligente.</strong></span>
-    </div>
-  </div>
-</div>
-
-<!-- ═══ S4 · PILAR 1 — EFICIENCIA ═══ -->
-<div class="slide" id="s4">
-  <div class="glowB"></div>
-  <div class="inner">
-    <div class="flex ai-c gap10 mb18 f d0">
-      <span class="badge bb">Pilar 1 de 3</span>
-      <span class="fw7" style="font-size:.93rem;">Eficiencia Financiera · Tercerización de la Logística</span>
-    </div>
-
-    <div class="g2 f d1 mb12" style="align-items:start;">
-      <div class="cdark">
-        <div class="label label-red mb12">Estado Actual — 100% Fijo</div>
-        <div class="flex col gap12">
-          <div>
-            <div class="num-xl red">COP 20K</div>
-            <div class="label mt4">costo operacional / envío</div>
-          </div>
-          <div>
-            <div class="track mt4"><div class="fill" style="width:34%;background:var(--red);"></div></div>
-            <div class="label mt4">margen neto · ~34%</div>
-          </div>
-          <div class="muted fs13 lh">
-            170 repartidores · 35 CC · costo fijo COP $718M/mes<br>
-            <strong style="color:var(--red);">8 envíos/rider/día — solo 55% de capacidad</strong>
-          </div>
-        </div>
-      </div>
-      <div class="flex col gap10">
-        <div class="cb">
-          <div class="label label-blue mb10">Escenario 1 · Riders −25% · 6 meses</div>
-          <div class="flex jc-sb ai-c mb8">
-            <div>
-              <div class="num-lg blue">COP 18K</div>
-              <div class="label mt4">costo / envío <span class="blue">−10%</span></div>
-            </div>
-            <div class="tc">
-              <div class="num-md green">+COP 104M</div>
-              <div class="label label-green mt4">utilidad / mes</div>
-            </div>
-          </div>
-          <div class="track"><div class="fill" style="width:38%;background:var(--blue);"></div></div>
-          <div class="label label-blue mt4">margen neto · ~38%</div>
-        </div>
-        <div class="cb">
-          <div class="label label-blue mb10">Escenario 2 · Riders −50% · 12–24 meses</div>
-          <div class="flex jc-sb ai-c mb8">
-            <div>
-              <div class="num-lg blue">COP 15K</div>
-              <div class="label mt4">costo / envío <span class="blue">−25%</span></div>
-            </div>
-            <div class="tc">
-              <div class="num-md green">+COP 165M</div>
-              <div class="label label-green mt4">utilidad / mes</div>
-            </div>
-          </div>
-          <div class="track"><div class="fill" style="width:45%;background:var(--blue);"></div></div>
-          <div class="label label-blue mt4">margen neto · ~45%</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="card f d2 mb10">
-      <div class="flow-wrap">
-        <div class="flow-step">
-          <div class="flow-icon" style="background:var(--red-dim);">📱</div>
-          <div class="fw6 fs13">Pedido entra</div><div class="muted fs12">app / web</div>
-        </div>
-        <div class="flow-arrow hide-sm">→</div>
-        <div class="flow-step">
-          <div class="flow-icon" style="background:var(--blue-dim);">🧠</div>
-          <div class="fw6 fs13">Picker decide</div><div class="muted fs12">distancia + disponibilidad</div>
-        </div>
-        <div class="flow-arrow hide-sm">→</div>
-        <div class="flow-step">
-          <div class="flow-icon" style="background:var(--amber-dim);">🏍️</div>
-          <div class="fw6 fs13">Flota propia 1°</div><div class="muted fs12">prioridad siempre</div>
-        </div>
-        <div class="flow-arrow hide-sm">→</div>
-        <div class="flow-step">
-          <div class="flow-icon" style="background:var(--blue-dim);">⚡</div>
-          <div class="fw6 fs13">Sin rider → 3PL</div><div class="muted fs12">automático &lt;2 min</div>
-        </div>
-        <div class="flow-arrow hide-sm">→</div>
-        <div class="flow-step">
-          <div class="flow-icon" style="background:var(--blue-dim);">📊</div>
-          <div class="fw6 fs13">Dashboard único</div><div class="muted fs12">costo real por envío</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="cb f d3 flex jc-sb ai-c wrap gap12">
-      <div>
-        <div class="label label-blue mb4">Ahorro · Pilar 1</div>
-        <div class="muted fs13">Fee Picker: COP 47M/mes · Esc 1: net +$104M · Esc 2: net +$165M (ya incluye fee)</div>
-      </div>
-      <div class="tc">
-        <div class="num-lg blue">COP 104–165M</div>
-        <div class="label label-blue">incremento de utilidad / mes</div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- ═══ S5 · PILAR 2 — RECURRENCIA ═══ -->
-<div class="slide" id="s5">
-  <div class="glowB"></div>
-  <div class="inner">
-    <div class="flex ai-c gap10 mb18 f d0">
-      <span class="badge bb">Pilar 2 de 3</span>
-      <span class="fw7" style="font-size:.93rem;">Aumento de Recurrencia · Cumplimiento de Tiempos</span>
-    </div>
-
-    <h2 class="h2 f d1 mb8">
-      El <span class="red">70%</span> de los clientes con entrega tardía<br>
-      <span style="color:var(--muted);font-weight:400;">no vuelve a pedir.</span>
-    </h2>
-    <p class="sub f d2 mb18" style="font-size:.87rem;">Hoy Papa John's entrega entre 60 y 90 minutos (publicado en su sitio). Picker Colombia promedia 43 minutos — todos los días.</p>
-
-    <div class="g2 f d2 mb12" style="align-items:start;">
-      <div class="flex col gap10">
-        <div class="cr">
-          <div class="label label-red mb10">Hoy — Sin Picker</div>
-          <div class="flex jc-sb ai-c mb8">
-            <div>
-              <div class="num-lg red">60 min</div>
-              <div class="label mt4">entre semana</div>
-            </div>
-            <div class="tc">
-              <div class="num-lg red">90 min</div>
-              <div class="label mt4">fines de semana</div>
-            </div>
-          </div>
-          <div class="track"><div class="fill" style="width:70%;background:var(--red);"></div></div>
-          <div class="muted fs12 mt6">70% de clientes tardíos no regresan</div>
-        </div>
-        <div class="cb">
-          <div class="label label-blue mb10">Con Picker</div>
-          <div class="flex jc-sb ai-c mb8">
-            <div>
-              <div class="num-lg blue">43 min</div>
-              <div class="label mt4">media Colombia · Picker</div>
-            </div>
-            <div class="tc">
-              <div class="num-md blue">Consistente</div>
-              <div class="label mt4">7 días / semana</div>
-            </div>
-          </div>
-          <div class="track"><div class="fill" style="width:43%;background:var(--blue);"></div></div>
-          <div class="muted fs12 mt6">Dentro del margen de promesa al cliente</div>
-        </div>
-      </div>
-
-      <div class="flex col gap10">
-        <div class="card">
-          <div class="label mb10">¿Qué significa en ventas?</div>
-          <div class="flex col gap10 fs13 lh">
-            <div class="flex gap8">
-              <span class="blue fw7">→</span>
-              <span>Si la recurrencia sube de <strong style="color:#e2e8f0;">25% → 50%</strong>, las ventas del canal propio crecen <strong style="color:var(--green);">+25%</strong>.</span>
-            </div>
-            <div class="flex gap8">
-              <span class="blue fw7">→</span>
-              <span>+25% en 34,000 envíos/mes = <strong style="color:var(--green);">+8,500 pedidos adicionales</strong> al mes.</span>
-            </div>
-            <div class="flex gap8">
-              <span class="blue fw7">→</span>
-              <span>A COP $70,000 ticket promedio = <strong style="color:var(--green);">+COP 595M</strong> en revenue adicional / mes.</span>
-            </div>
-          </div>
-        </div>
-        <div class="cr">
-          <div class="flex gap8 ai-c mb8">
-            <span>🛒</span>
-            <span class="fw7 fs13">Lo vivimos en persona</span>
-            <span class="badge br" style="font-size:.56rem;margin-left:4px;">Mystery shopping</span>
-          </div>
-          <div class="muted fs13 lh flex col gap6">
-            <span>→ Compramos como cliente a través del canal propio.</span>
-            <span>→ El link de rastreo enviado por correo <strong style="color:#e2e8f0;">no funcionó.</strong> Error DNS — página completamente inaccesible.</span>
-            <span>→ El cliente nunca supo dónde estaba su pedido.</span>
-            <span style="color:var(--blue);">→ Con Picker: tracking en tiempo real con marca propia. Sin sorpresas.</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="cb f d3 flex jc-sb ai-c wrap gap12">
-      <div>
-        <div class="label label-blue mb4">Upside · Pilar 2</div>
-        <div class="muted fs13">Estimado conservador · pendiente validar % recurrencia actual con el cliente</div>
-      </div>
-      <div class="tc">
-        <div class="num-lg green">+COP 595M</div>
-        <div class="label label-green">en revenue adicional / mes (gross)</div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- ═══ S6 · PILAR 3 — EXPANSIÓN ═══ -->
-<div class="slide" id="s6">
-  <div class="glowA"></div>
-  <div class="inner">
-    <div class="flex ai-c gap10 mb18 f d0">
-      <span class="badge ba">Pilar 3 de 3</span>
-      <span class="fw7" style="font-size:.93rem;">Expansión · Más volumen con la misma flota</span>
-    </div>
-
-    <div class="g2 f d1 mb16" style="align-items:center;gap:24px;">
-      <div style="text-align:center;">
-        <div class="label label-red mb10">Hoy — Capacidad subutilizada</div>
-        <div style="font-size:5.5rem;font-weight:900;line-height:1;color:var(--red);">8</div>
-        <div class="label label-red mt6 mb12">envíos / repartidor / día</div>
-        <div class="muted fs13 lh">
-          El estándar de la industria es <strong style="color:#e2e8f0;">12–15 envíos/día.</strong><br>
-          La flota opera al <strong style="color:var(--red);">~55% de su capacidad real.</strong>
-        </div>
-      </div>
-      <div style="text-align:center;">
-        <div class="label label-blue mb10">Con Picker — Orquestación inteligente</div>
-        <div style="font-size:5.5rem;font-weight:900;line-height:1;color:var(--blue);">12+</div>
-        <div class="label label-blue mt6 mb12">envíos / repartidor / día</div>
-        <div class="muted fs13 lh">
-          <strong style="color:#e2e8f0;">+50% de volumen</strong> con la misma flota.<br>
-          Sin contratar un solo repartidor adicional.
-        </div>
-      </div>
-    </div>
-
-    <div class="g3 f d2 mb14">
-      <div class="card tc">
-        <div class="label mb8">Locales activos</div>
-        <div class="num-lg amber">101</div>
-        <div class="muted fs12 mt6">Papa John's + El Corral</div>
-      </div>
-      <div class="card tc">
-        <div class="label mb8">Envíos potenciales adicionales</div>
-        <div class="num-lg amber">+5,050</div>
-        <div class="muted fs12 mt6">101 locales × +50/mes</div>
-      </div>
-      <div class="card tc">
-        <div class="label mb8">Revenue adicional estimado</div>
-        <div class="num-lg amber">+COP 354M</div>
-        <div class="muted fs12 mt6">× $70,000 ticket promedio</div>
-      </div>
-    </div>
-
-    <div class="ca f d3 flex jc-sb ai-c wrap gap12">
-      <div>
-        <div class="label label-amber mb4">Upside · Pilar 3</div>
-        <div class="muted fs13">Sin costo fijo adicional · Picker redistribuye pedidos en la red de 101 locales</div>
-      </div>
-      <div class="tc">
-        <div class="num-lg amber">+COP 354M</div>
-        <div class="label label-amber">revenue adicional / mes (est. conservador)</div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- ═══ S7 · ROI / RESUMEN ═══ -->
-<div class="slide" id="s7">
-  <div class="glowB"></div>
-  <div class="inner">
-    <div class="tc mb22">
-      <div class="f d0 mb8"><span class="badge bb">Resumen Financiero</span></div>
-      <h2 class="h2 f d1">Por cada peso que invierten en Picker,<br><span class="blue">el retorno supera los 25×.</span></h2>
-    </div>
-
-    <div class="flex col gap10 mb14 f d1">
-      <div class="card flex jc-sb ai-c wrap gap12">
-        <div style="flex:1;">
-          <div class="flex ai-c gap8 mb6"><span class="badge bb" style="font-size:.58rem;">Pilar 1</span><span class="fw7">Eficiencia Financiera · Tercerización</span></div>
-          <div class="muted fs13">COP $20K → COP $15K/envío · Riders −50% · Fee Picker: COP 47M/mes</div>
-          <div class="track mt8"><div class="fill" style="width:55%;background:var(--blue);"></div></div>
-        </div>
-        <div class="tc" style="min-width:140px;">
-          <div class="num-lg green">+COP 165M</div>
-          <div class="label label-green">utilidad / mes · Esc 2</div>
-        </div>
-      </div>
-
-      <div class="card flex jc-sb ai-c wrap gap12">
-        <div style="flex:1;">
-          <div class="flex ai-c gap8 mb6"><span class="badge bb" style="font-size:.58rem;">Pilar 2</span><span class="fw7">Aumento de Recurrencia</span></div>
-          <div class="muted fs13">60→90 min hoy · Picker: 43 min · 70% abandono por tardanza · Recurrencia 25% → 50%</div>
-          <div class="track mt8"><div class="fill" style="width:30%;background:var(--blue);"></div></div>
-        </div>
-        <div class="tc" style="min-width:140px;">
-          <div class="num-lg green">+COP 595M</div>
-          <div class="label label-green">revenue adicional / mes</div>
-        </div>
-      </div>
-
-      <div class="card flex jc-sb ai-c wrap gap12">
-        <div style="flex:1;">
-          <div class="flex ai-c gap8 mb6"><span class="badge ba" style="font-size:.58rem;">Pilar 3</span><span class="fw7">Expansión · 101 locales al máximo</span></div>
-          <div class="muted fs13">8 envíos/rider/día → 12+ · mismos costos, mayor throughput · 0 contratación adicional</div>
-          <div class="track mt8"><div class="fill" style="width:20%;background:var(--amber);"></div></div>
-        </div>
-        <div class="tc" style="min-width:140px;">
-          <div class="num-lg amber">+COP 354M</div>
-          <div class="label label-amber">revenue adicional / mes (est.)</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="f d3" style="background:linear-gradient(135deg,rgba(56,189,248,.13),rgba(56,189,248,.04));border:1px solid var(--blue-border);border-radius:16px;padding:20px;display:grid;grid-template-columns:1fr auto;gap:20px;align-items:center;">
-      <div>
-        <div class="label label-blue mb8">El Resumen</div>
-        <div class="muted fs13 lh flex col gap6">
-          <span>Picker les cuesta <strong style="color:#e2e8f0;">COP 47M/mes</strong> en fee de orquestación.</span>
-          <span>Solo con el <strong style="color:var(--blue);">Pilar 1 (Esc 2)</strong> ya tienen un retorno de <strong style="color:var(--blue);">3.5×</strong> sobre lo que invierten.</span>
-          <span>Con los <strong style="color:var(--blue);">3 pilares</strong> el retorno potencial supera <strong style="color:var(--blue);">los 25×</strong> por cada peso invertido en Picker.</span>
-        </div>
-      </div>
-      <div class="tc">
-        <div style="font-size:3rem;font-weight:900;color:var(--blue);line-height:1;letter-spacing:-.03em;">25×</div>
-        <div class="label label-blue mt4">retorno potencial<br>por peso en Picker</div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- ═══ S8 · SIGUIENTES PASOS ═══ -->
-<div class="slide" id="s8">
-  <div class="glowB"></div>
-  <div class="inner tc">
-    <div class="f d0 mb8"><span class="badge bb">Siguientes Pasos</span></div>
-    <div class="rule auto f d1" style="margin:12px auto 20px;"></div>
-    <h2 class="h2 f d2 mb8">El siguiente paso<br><span class="blue">es simple.</span></h2>
-    <p class="sub f d3 mb28">Piloto en 1–2 locales · Sin costo de integración · Sin cláusula de permanencia</p>
-
-    <div class="flex col gap10 mb24" style="text-align:left;max-width:600px;margin:0 auto 28px;">
-      <div class="card f d2 flex gap14 ai-c">
-        <div style="width:30px;height:30px;border-radius:50%;background:var(--blue-dim);border:1px solid var(--blue-border);display:flex;align-items:center;justify-content:center;color:var(--blue);font-weight:800;font-size:.8rem;flex-shrink:0;">1</div>
-        <div><div class="fw7 mb4">Validar datos con el equipo</div><div class="muted fs13">Confirmar envíos totales por marca, % recurrencia actual y flujo de despacho actual.</div></div>
-      </div>
-      <div class="card f d3 flex gap14 ai-c">
-        <div style="width:30px;height:30px;border-radius:50%;background:var(--blue-dim);border:1px solid var(--blue-border);display:flex;align-items:center;justify-content:center;color:var(--blue);font-weight:800;font-size:.8rem;flex-shrink:0;">2</div>
-        <div><div class="fw7 mb4">Reunión con liderazgo + IT</div><div class="muted fs13">Presentación formal a dirección y equipo técnico. Juan Daniel (CEO Picker) se une.</div></div>
-      </div>
-      <div class="card f d4 flex gap14 ai-c">
-        <div style="width:30px;height:30px;border-radius:50%;background:var(--blue-dim);border:1px solid var(--blue-border);display:flex;align-items:center;justify-content:center;color:var(--blue);font-weight:800;font-size:.8rem;flex-shrink:0;">3</div>
-        <div><div class="fw7 mb4">Piloto · 1–2 locales</div><div class="muted fs13">Integración con el sistema de pedidos actual. Resultados medibles en 30 días.</div></div>
-      </div>
-      <div class="cb f d5 flex gap14 ai-c">
-        <div style="width:30px;height:30px;border-radius:50%;background:rgba(56,189,248,.2);border:1px solid var(--blue-border);display:flex;align-items:center;justify-content:center;color:var(--blue);font-weight:800;font-size:.8rem;flex-shrink:0;">4</div>
-        <div><div class="fw7 mb4 blue">Despliegue Papa John's + El Corral</div><div class="muted fs13">Escalar a los 101 locales activos. Flota compartida. COP 165M/mes de utilidad adicional desde el Pilar 1.</div></div>
-      </div>
-    </div>
-
-    <div class="f d6 muted fs13">
-      <span class="blue">pickerexpress.com</span> · Ricardo Astorga · <span class="blue">ricardoast@pickerexpress.com</span>
-    </div>
-  </div>
-</div>
-
-<!-- NAV -->
-<div id="nav">
-  <button class="nb" id="prev" onclick="go(-1)" disabled>
-    <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg>
-  </button>
-  <div id="dots" style="display:flex;gap:6px;align-items:center;"></div>
-  <button class="nb" id="next" onclick="go(1)">
-    <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
-  </button>
-</div>
-
-<script>
-  const N=8; let c=1;
-  function go(d){jump(c+d);}
-  function jump(n){
-    if(n<1||n>N)return;
-    document.getElementById('s'+c).classList.remove('active');
-    c=n;
-    const s=document.getElementById('s'+c);
-    s.classList.add('active');
-    s.querySelectorAll('.f').forEach(el=>{el.style.animation='none';void el.offsetWidth;el.style.animation='';});
-    sync();
-  }
-  function sync(){
-    document.getElementById('prev').disabled=c===1;
-    document.getElementById('next').disabled=c===N;
-    document.getElementById('ctr').textContent=c+' / '+N;
-    document.querySelectorAll('.dot').forEach((d,i)=>d.classList.toggle('on',i+1===c));
-  }
-  const de=document.getElementById('dots');
-  for(let i=1;i<=N;i++){const d=document.createElement('div');d.className='dot'+(i===1?' on':'');d.onclick=()=>jump(i);de.appendChild(d);}
-  document.addEventListener('keydown',e=>{
-    if(e.key==='ArrowRight'||e.key==='ArrowDown')go(1);
-    if(e.key==='ArrowLeft'||e.key==='ArrowUp')go(-1);
-  });
-  sync();
-</script>
-</body>
-</html>
